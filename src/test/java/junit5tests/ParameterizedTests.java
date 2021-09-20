@@ -53,7 +53,7 @@ public class ParameterizedTests {
         System.out.println("param1 = " + param1 + ", param2 = " + param2);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest  //More than 1 file assigned in here as array
     @CsvFileSource(files = {"src/test/resources/params/shoppinglist.csv",
             "src/test/resources/params/shoppinglist2.csv"},
             numLinesToSkip = 1)
@@ -65,7 +65,7 @@ public class ParameterizedTests {
 
     }
 
-    @ParameterizedTest
+    @ParameterizedTest  //Specify delimiter of CSV file
     @CsvFileSource(files = "src/test/resources/params/shoppinglist3.csv",
             numLinesToSkip = 1, delimiterString = "___")
     void csvFileSource_StringDoubleIntStringStringSpecifiedDelimiter(String name, double price,
